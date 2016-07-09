@@ -12,8 +12,8 @@ var Trip = require('../models/trip.js')
 router.post('/', function(req, res, next) {
 
   var tripName = req.body.name;
-  var start_date = req.body.start_date;
-  var end_date = req.body.end_date;
+  var start_date = req.body.startDate;
+  var end_date = req.body.endDate;
   var destination = req.body.location;
   var adults = req.body.adults;
   var children = req.body.children;
@@ -35,7 +35,6 @@ router.post('/', function(req, res, next) {
 
   newTrip.save(function(err, response) {
     if (err) console.log(err);
-    console.log(response._id)
     res.redirect('./trips/'+ response._id);
   })
 });
@@ -47,7 +46,6 @@ router.get('/:_id', function(req, res, next) {
     _id: trip_id
   }, function(err, data) {
     if (err) console.log(err);
-    console.log(data);
     // res.send('test');
     request.get('http://localhost:3000/api/trips/' + trip_id, function(err, response, body){
       res.render('trip', {
@@ -58,29 +56,29 @@ router.get('/:_id', function(req, res, next) {
   })
 })
 
-  // router.put('/:id', function(req, res) {
-  //   var id = req.params.id;
+  router.put('/:id', function(req, res) {
+    var id = req.params.id;
 
-  //   Trip.findById(id, function (err, trip) {
-  //     if (err) return handleError(err);
-  //     trip.startDate = req.body.//<form name>;
-  //     trip.endDate =
-  //     trip.rooms =
-  //     trip.adults =
-  //     trip.children =
-  //     trip.concepts =
-  //     trip.amenities =
+    Trip.findById(id, function (err, trip) {
+      if (err) return handleError(err);
+      // trip.startDate = req.body.//<form name>;
+      // trip.endDate =
+      // trip.rooms =
+      // trip.adults =
+      // trip.children =
+      // trip.concepts =
+      // trip.amenities =
 
+      trip.tripName = req.body.name
+      console.log(req.body.name)
+      trip.save(function (err, data) {
+        if (err) return handleError(err);
+        console.log(data.tripName);
+        res.redirect('/'+ id);
+      })
+    });
+  });
 
-  //     trip.save(function (err, data) {
-  //       if (err) return handleError(err);
-  //       res.redirect('/:id');
-  //   })
-  //     });
-  //   });
-  // });
-
-// });
 
 
 module.exports = router;

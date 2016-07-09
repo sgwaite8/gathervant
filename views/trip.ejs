@@ -9,7 +9,7 @@
   </head>
   <body>
     <h1>Trip</h1>
-    <form class="form-horizontal" name="trip_form" action="./trips" method="POST">
+    <form class="form-horizontal" name="trip_form" method="POST">
     <fieldset>
       <legend>Legend</legend>
       <div class="form-group">
@@ -21,7 +21,7 @@
       <div class="form-group">
         <label for="inputConcepts" class="col-lg-2 control-label">Concepts</label>
         <div class="col-lg-10">
-          <input type="text" name="name" class="form-control" id="inputConcepts" placeholder="List Your Plans">
+          <input type="text" name="concepts" class="form-control" id="inputConcepts" placeholder="List Your Plans">
         </div>
       </div>
       <div class="form-group">
@@ -88,4 +88,8 @@
 
     <p><%= data %> <%= response.body %></p>
   </body>
+
+<script type="text/javascript" src="//code.jquery.com/jquery-2.2.0.min.js"></script>
+<script type="text/javascript" src="/update.js"></script>
+
 </html>

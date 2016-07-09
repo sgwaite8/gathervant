@@ -12,7 +12,7 @@ router.get('/trips/:_id', function(req, res, next) {
     // if concepts or amenities are null set them to an empty string
     trip.concepts ? concepts = trip.concepts.join(',') : concepts = '';
     trip.amenities ? amenities = trip.amenities.join(',') : amenities = '';
-    console.log(trip);
+
     var destination = trip.destination,
         rooms = trip.rooms,
         adults = trip.adults,

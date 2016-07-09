@@ -12,8 +12,9 @@ var Trip = require('../models/trip.js')
 router.post('/', function(req, res, next) {
 
   var tripName = req.body.name;
-  var start_date = req.body.start_date;
-  var end_date = req.body.end_date;
+  // 2016-08-01
+  var start_date = formatDate(req.body.startDate);
+  var end_date = formatDate(req.body.endDate);
   var destination = req.body.location;
   var adults = req.body.adults;
   var children = req.body.children;
@@ -32,6 +33,7 @@ router.post('/', function(req, res, next) {
     tripName: tripName,
     tripDiscription: ''
   });
+
 
   newTrip.save(function(err, response) {
     if (err) console.log(err);
@@ -81,6 +83,12 @@ router.get('/:_id', function(req, res, next) {
   // });
 
 // });
+
+function formatDate(date){
+  date = date.split('-');
+  var newDate =  new Date(date[0], date[1] - 1, date[2])
+  return newDate
+}
 
 
 module.exports = router;

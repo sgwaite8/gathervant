@@ -22,10 +22,9 @@ router.get('/trips/:_id', function(req, res, next) {
     }
   }
 
-  request(options, function(err, response, body ){
+  request(options, function(err, response){
     console.log("err : " + err);
-    console.log("body : " + body );
-    res.json(response)
+    res.json(JSON.parse(response.body))
   })
 })
 

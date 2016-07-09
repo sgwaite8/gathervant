@@ -44,7 +44,7 @@ router.post('/', function(req, res, next) {
 router.get('/:_id', function(req, res, next) {
   var trip_id = req.params._id;
   request.get('http://localhost:3000/api/trips/' + trip_id, function(err, responce, body){
-    res.json(JSON.parse(responce.body));
+    res.render('trip');
   })
 })
 

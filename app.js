@@ -8,7 +8,7 @@ var mongoose = require('mongoose');
 
 var routes = require('./routes/index');
 var trips = require('./routes/trips');
-
+var api = require('./routes/api');
 var app = express();
 
 // view engine setup
@@ -27,6 +27,7 @@ mongoose.connect(process.env.MONGOLAB_Gathervant);
 
 app.use('/', routes);
 app.use('/trips', trips);
+app.use('/api', api)
 
 
 // catch 404 and forward to error handler

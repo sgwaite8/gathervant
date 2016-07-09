@@ -1,6 +1,8 @@
 var express = require('express');
 var mongoose = require('mongoose');
 var router = express.Router();
+var API_KEY = process.env.Wayblazer_API_KEY
+var request = require('request');
 
 /* GET trip page. */
 router.post('/', function(req, res, next) {

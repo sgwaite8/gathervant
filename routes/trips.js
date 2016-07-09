@@ -2,7 +2,7 @@ var express = require('express');
 var mongoose = require('mongoose');
 var router = express.Router();
 
-/* GET home page. */
+/* GET trip page. */
 router.post('/', function(req, res, next) {
   res.send('Go here to save a trip');
 });

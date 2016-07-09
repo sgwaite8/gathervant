@@ -10,7 +10,8 @@ var tripSchema = new mongoose.Schema({
     concepts: {type: String, required: false},
     amenities: {type: String, required: false},
     tripProfile: {type: String, required: false},
-
+    tripName: {type: String, required: false},
+    tripDiscription: {type: String, required: false}
 
 });
 daySchema.pre('save', function(next) {
@@ -24,4 +25,4 @@ daySchema.pre('save', function(next) {
       next();
     });
 
-module.exports = mongoose.model('Task', taskSchema);
+module.exports = mongoose.model('Trip', taskSchema);

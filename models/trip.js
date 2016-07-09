@@ -7,14 +7,14 @@ var tripSchema = new mongoose.Schema({
     adults: {type: Number, required: true},
     children: {type: Number, required: true},
     destination: {type: String, required: true},
-    concepts: {type: String, required: false},
-    amenities: {type: String, required: false},
+    concepts: {type: Array, required: false},
+    amenities: {type: Array, required: false},
     tripProfile: {type: String, required: false},
     tripName: {type: String, required: false},
     tripDiscription: {type: String, required: false}
 
 });
-daySchema.pre('save', function(next) {
+tripSchema.pre('save', function(next) {
       var currentDate = new Date();
 
       this.updated_at = currentDate;
@@ -25,4 +25,4 @@ daySchema.pre('save', function(next) {
       next();
     });
 
-module.exports = mongoose.model('Trip', taskSchema);
+module.exports = mongoose.model('Trip', tripSchema);

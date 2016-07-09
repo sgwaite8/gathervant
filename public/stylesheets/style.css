@@ -1,8 +1,48 @@
+/*sycnopate normal and bold*/
+/*playfair normal 400, bold 700, italic, ultra bold */
+
 body {
-  padding: 50px;
+  /*padding: 50px;*/
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
   color: #00B7FF;
+}
+
+h1 {
+  font-family: 'Syncopate';
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 70px;
+}
+
+h2 {
+  color: white;
+  font-family: 'Syncopate';
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.btn-primary {
+  font-weight: bold;
+  background-color: black;
+  border-color: black;
+}
+
+.hero img {
+  padding-top: 5%;
+}
+
+.hero {
+  background-image: url('../images/ATXEVE2.jpg');
+  background-repeat:no-repeat;
+  background-size:contain;
+  background-position:center;
+  height: 900px;
+  background-size: cover;
+  text-align: center;
+  color: white;
+  font-family: 'Syncopate';
+  font-weight: bold;
 }

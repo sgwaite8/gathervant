@@ -1,21 +1,101 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
+    <title>Gathervant</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="http://bootswatch.com/cosmo/bootstrap.min.css" media="screen" title="no title" charset="utf-8">
+    <link href='https://fonts.googleapis.com/css?family=Syncopate:400,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-    <form name="trip_form" action="./trips" method="POST">
-      <input type="text" name="name" placeholder="Name your trip?">
-      <input type="text" name="startDate" placeholder="start date">
-      <input type="text" name="endDate" placeholder="end date">
-      <input type="text" name="location" placeholder="location">
-      <input type="text" name="room" placeholder="rooms?">
-      <input type="text" name="adults" placeholder="adults?">
-      <input type="text" name="children" placeholder="children?">
-      <input type="submit" name="submit">
+    <div class="hero">
+      <img src="/images/gv.logomark.png" alt="gathervant logo">
+      <h1>Gathervant</h1>
+      <h2>Group trip planner</h2>
+      <button type="submit" class="btn btn-primary">Your trip starts here</button>
+      <!-- <p>Welcome to <%= title %></p> -->
+    </div>
+    <div class="form">
+      <form class="form-horizontal" name="trip_form" action="./trips" method="POST">
+    <fieldset>
+      <!-- <legend>Legend</legend> -->
+      <h3>Plan your next trip</h3>
+      <div class="form-group">
+        <label for="inputTrip" class="col-lg-2 control-label">Trip Name</label>
+        <div class="col-lg-10">
+          <input type="text" name="name" class="form-control" id="inputTrip" placeholder="Name Your Trip">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="inputConcepts" class="col-lg-2 control-label">Concepts</label>
+        <div class="col-lg-10">
+          <input type="text" name="name" class="form-control" id="inputConcepts" placeholder="List Your Plans">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="inputStartDate" class="col-lg-2 control-label">Start Date</label>
+        <div class="col-lg-10">
+          <input type="date" name="startDate" class="form-control" id="inputStartDate">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="inputEndDate" class="col-lg-2 control-label">End Date</label>
+        <div class="col-lg-10">
+          <input type="date" name="endDate" class="form-control" id="inputEndDate">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="inputLocation" class="col-lg-2 control-label">Location</label>
+        <div class="col-lg-10">
+          <input type="text" name="location" class="form-control" id="inputLocation">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="rooms" class="col-lg-2 control-label">Rooms</label>
+        <div class="col-lg-10">
+          <select class="form-control" id="rooms">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="adults" class="col-lg-2 control-label">Adults</label>
+        <div class="col-lg-10">
+          <select class="form-control" id="adults">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="children" class="col-lg-2 control-label">Children</label>
+        <div class="col-lg-10">
+          <select class="form-control" id="children">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-lg-10 col-lg-offset-2">
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </div>
+    </fieldset>
     </form>
+    </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src ="../javascripts/script.js"></script>
   </body>
 </html>

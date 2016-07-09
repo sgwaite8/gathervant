@@ -43,9 +43,44 @@ router.post('/', function(req, res, next) {
 /* GET trip page. */
 router.get('/:_id', function(req, res, next) {
   var trip_id = req.params._id;
-  request.get('http://localhost:3000/api/trips/' + trip_id, function(err, responce, body){
-    res.json(JSON.parse(responce.body));
+
+  Trip.find({
+    _id: trip_id
+  }, function(err, data) {
+    if (err) console.log(err);
+    console.log(data);
+    // res.send('test');
+    request.get('http://localhost:3000/api/trips/' + trip_id, function(err, response, body){
+      res.render('trip', {
+          data: data,
+          response: response
+        });
+    })
   })
 })
+
+  // router.put('/:id', function(req, res) {
+  //   var id = req.params.id;
+
+  //   Trip.findById(id, function (err, trip) {
+  //     if (err) return handleError(err);
+  //     trip.startDate = req.body.//<form name>;
+  //     trip.endDate =
+  //     trip.rooms =
+  //     trip.adults =
+  //     trip.children =
+  //     trip.concepts =
+  //     trip.amenities =
+
+
+  //     trip.save(function (err, data) {
+  //       if (err) return handleError(err);
+  //       res.redirect('/:id');
+  //   })
+  //     });
+  //   });
+  // });
+
+// });
 
 module.exports = router;

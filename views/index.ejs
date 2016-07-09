@@ -13,10 +13,10 @@
       <img src="/images/gv.logomark.png" alt="gathervant logo">
       <h1>Gathervant</h1>
       <h2>Group trip planner</h2>
-      <button type="submit" class="btn btn-primary">Your trip starts here</button>
+      <button type="submit" class="btn btn-primary" id="hero-btn">Your trip starts here</button>
       <!-- <p>Welcome to <%= title %></p> -->
     </div>
-    <div class="form">
+    <div class="form container">
       <form class="form-horizontal" name="trip_form" action="./trips" method="POST">
     <fieldset>
       <!-- <legend>Legend</legend> -->
@@ -79,6 +79,7 @@
         <label for="children" class="col-lg-2 control-label">Children</label>
         <div class="col-lg-10">
           <select class="form-control" id="children">
+            <option>0</option>
             <option>1</option>
             <option>2</option>
             <option>3</option>

@@ -19,10 +19,11 @@ router.get('/trips/:_id', function(req, res, next) {
         children = trip.children,
 
         // make sure trip start and end are stored in a date format and working
-        startDate = trip.startDate,
-        endDate = trip.endDate,
+        startDate = trip.startDate.toISOString(),
+        endDate = trip.endDate.toISOString(),
         getPricing = true;
 
+        // console.log(startDate.toISOString());
     // create options for the Wayblazer api request
     var options = {
       "url":"https://api.wayblazer.com/sandbox/accommodations/search?" + "destination=" + destination +"&rooms="+ rooms + "&adults=" + adults + "&children=" + children + "&startDate="+ startDate + "&endDate=" + endDate  + "&getPricing=" + getPricing +"&concepts=" + concepts + "&amenities=" + amenities ,

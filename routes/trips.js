@@ -39,7 +39,6 @@ router.post('/', function(req, res, next) {
 
   newTrip.save(function(err, response) {
     if (err) console.log(err);
-    console.log(response)
     res.redirect('./trips/'+ response._id);
   })
 });
@@ -56,7 +55,7 @@ router.get('/:_id', function(req, res, next) {
       var blazerBody = JSON.parse(response.body).body,
           blazerObj = JSON.parse(blazerBody)
 
-      // console.log('body:'+ Object.keys(blazerObj.accommodations[0].image.urls.original))
+      console.log('Wayblaze:'+ blazerObj)
       console.log('DB:'+ data)
       res.render('trip', {
           data: data,

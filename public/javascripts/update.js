@@ -10,11 +10,12 @@ $(function() {
 
   $('button').click(function(evt){
     evt.preventDefault();
+    console.log(urlPathName)
+    console.log($('#rooms').val())
     $.ajax({
         url: urlPathName,
         type: 'PUT',
         data: {
-          'tripName': $('#inputTrip').val(),
           'startDate' : $('#inputStartDate').val(),
           'endDate' : $('#inputEndDate').val(),
           'rooms' : $('#rooms').val(),

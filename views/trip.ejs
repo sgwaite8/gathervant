@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
     <link href='https://fonts.googleapis.com/css?family=Syncopate:400,700' rel='stylesheet' type='text/css'>
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="/stylesheets/hotelStyle.css">
   </head>
   <body>
 
@@ -42,7 +43,7 @@
               <label for="rooms" class="col-lg-2 control-label">Rooms</label>
               <div class="col-lg-10" id="firstBox">
                 <select class="form-control" id="rooms">
-                  <option selected disabled><%= data[0].rooms %></option>
+                  <option selected><%= data[0].rooms %></option>
                   <option>1</option>
                   <option>2</option>
                   <option>3</option>
@@ -55,7 +56,7 @@
               <label for="adults" class="col-lg-2 control-label">Adults</label>
               <div class="col-lg-10" id="secondBox">
                 <select class="form-control" id="adults">
-                <option selected disabled><%= data[0].adults %></option>
+                <option selected ><%= data[0].adults %></option>
                   <option>1</option>
                   <option>2</option>
                   <option>3</option>
@@ -68,7 +69,7 @@
               <label for="children" class="col-lg-2 control-label">Children</label>
               <div class="col-lg-10" id="thirdBox">
                 <select class="form-control" id="children">
-                <option selected disabled><%= data[0].children %></option>
+                <option selected ><%= data[0].children %></option>
                   <option>0</option>
                   <option>1</option>
                   <option>2</option>
@@ -91,23 +92,31 @@
           <i class="fa fa-check-square fa-lg" style="margin-left: 20px;"></i>
 
         </div>
+      </div>
       </fieldset>
     </form>
 
 
- <div>
+ <div class="hotelResponse-container">
       <% for (var i=0; i < 5; i++) { %>
-          <div>
-            <%= accommodations[i].attraction.name %>
-          <div>
-            <img src="<%= accommodations[i].image.urls[100] %>" alt="">
-          </div>
-            <ul>
-              <li>Stars: <%= accommodations[i].attraction.starRating %></li>
-              <li>Address: <%= accommodations[i].attraction.location.formattedAddress %></li>
-              <li>Price: <%= accommodations[i].attraction.minRate %></li>
-            </ul>
 
+          <div class="hotelSingle-container">
+            <div class="hotelImg" style="background-image: url(<%= accommodations[i].image.urls[300] %>)">
+              <h5 class="price" >Price: <%= accommodations[i].attraction.minRate %></h5>
+            </div>
+
+            <div class="hoteltext-container">
+              <h4 class="hotelName"><%= accommodations[i].attraction.name %><h4>
+              <div>
+                <% for (var j=0; j < accommodations[i].attraction.starRating; j++){ %>
+                  <img class="starImg" src="/images/star.png" alt="">
+                <% } %>
+              </div>
+              <div class="hotelAddress"><%= accommodations[i].attraction.location.formattedAddress %></div>
+              <div class="bookBtn-container">
+                <button class="bookItBtn">Book it</button>
+              </div>
+            </div>
 
           </div>
 

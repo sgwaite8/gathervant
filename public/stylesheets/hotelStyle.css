@@ -1,0 +1,47 @@
+.hotelResponse-container{
+  border: 2px solid black;
+  padding: 40px 50px;
+  color: white;
+
+}
+.hotelSingle-container{
+  background-color: black;
+  margin-bottom: 25px;
+  display: flex;
+}
+.hotelImg{
+  padding: 5px 10px;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  width: 40%;
+  margin: 5px;
+}
+.hoteltext-container{
+  width: 100%;
+  text-align: center;
+}
+.starImg{
+  margin: auto 2px;
+  height: .6em;
+}
+.price{
+  font-weight: bold;
+  background-color: rgba(0,0,0,.4);
+  width: 65%;
+  padding-left: 5px;
+  text-align: center;
+}
+.hotelAddress{
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.bookBtn-container{
+  display: flex;
+  justify-content: center;
+}
+.bookItBtn{
+  width: 50%;
+  background-color: white;
+  border-color: black;
+  color: black;
+}

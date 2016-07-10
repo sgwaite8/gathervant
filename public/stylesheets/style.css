@@ -111,6 +111,22 @@ h3 {
   margin-left: 30px;
 }
 
+input.form-control{
+  width:20%;
+}
+
+#rooms.form-control {
+  width: 20%;
+}
+
+#adults.form-control {
+  width: 20%;
+}
+
+#children.form-control {
+  width: 20%;
+}
+
 #tripLogo {
   height: 100px;
   padding: 10px 0 0 10px;

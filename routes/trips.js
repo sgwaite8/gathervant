@@ -11,14 +11,16 @@ var Trip = require('../models/trip.js')
 
 router.post('/', function(req, res, next) {
 
+
   var tripName = req.body.name,
-      start_date = req.body.startDate,
-      end_date = req.body.endDate,
+      start_date = formateDate(req.body.startDate),
+      end_date = formatDate(req.body.endDate),
       destination = req.body.location,
       adults = req.body.adults,
       children = req.body.children,
       tripProfile = 'none'
       room = req.body.room;
+
 
   var newTrip = Trip({
     startDate: start_date,
@@ -33,6 +35,7 @@ router.post('/', function(req, res, next) {
     tripName: tripName,
     tripDiscription: ''
   });
+
 
   newTrip.save(function(err, response) {
     if (err) console.log(err);
@@ -83,6 +86,12 @@ router.get('/:_id', function(req, res, next) {
     });
   });
 
+
+function formatDate(date){
+  date = date.split('-');
+  var newDate =  new Date(date[0], date[1] - 1, date[2])
+  return newDate
+}
 
 
 module.exports = router;

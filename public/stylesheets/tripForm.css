@@ -1,0 +1,44 @@
+#tripFieldset {
+  margin: 3% 35%;
+}
+
+.editTripForm {
+  text-align: center;
+  margin: 5px;
+}
+
+.full-form {
+  align-content: center;
+  text-align: center;
+}
+
+.container.dropdowns {
+  text-align: center;
+  display: inline-block;
+}
+
+.container {
+  display: inline-flex;
+  /*margin: 2% 10%;*/
+}
+
+.row {
+  text-align: center;
+  display: inline-block;
+}
+
+input.form-control{
+  width: 40%;
+}
+
+#rooms.form-control {
+  width: 20%;
+}
+
+#adults.form-control {
+  width: 20%;
+}
+
+#children.form-control {
+  width: 20%;
+}

@@ -23,7 +23,6 @@ router.get('/trips/:_id', function(req, res, next) {
         endDate = trip.endDate.toISOString(),
         getPricing = true;
 
-        // console.log(startDate.toISOString());
     // create options for the Wayblazer api request
     var options = {
       "url":"https://api.wayblazer.com/sandbox/accommodations/search?" + "destination=" + destination +"&rooms="+ rooms + "&adults=" + adults + "&children=" + children + "&startDate="+ startDate + "&endDate=" + endDate  + "&getPricing=" + getPricing +"&concepts=" + concepts + "&amenities=" + amenities ,
@@ -33,6 +32,7 @@ router.get('/trips/:_id', function(req, res, next) {
     }
     // send the reqest to the Wayblazer api and retunr the response as json
     request(options, function(error, response){
+
       res.json(response);
     })
   })

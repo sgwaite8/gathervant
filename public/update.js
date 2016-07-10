@@ -18,7 +18,8 @@ $(function() {
           'rooms' : $('#rooms').val(),
           'adults' : $('#adults').val(),
           'children' : $('#children').val(),
-          'concepts' : $('#inputConcepts').val()
+          'concepts' : $('#inputConcepts').val(),
+          'tripProfile' : 'none'
         }
       })
       .done(function(update) {

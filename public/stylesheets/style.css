@@ -1,8 +1,123 @@
+/*sycnopate normal and bold*/
+/*playfair normal 400, bold 700, italic, ultra bold */
+
 body {
-  padding: 50px;
+  /*padding: 50px;*/
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
   color: #00B7FF;
+}
+
+h1 {
+  font-family: 'Syncopate';
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 70px;
+}
+
+h2 {
+  color: white;
+  font-family: 'Syncopate';
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+h3 {
+  text-align: center;
+  font-family: 'Syncopate';
+  padding-top: 10px;
+}
+
+.form {
+  text-align: center;
+}
+
+.hero img {
+  padding-top: 5%;
+}
+
+.hero {
+  background-image: url('/images/ATXEVE2.jpg');
+  background-repeat:no-repeat;
+  background-size:contain;
+  background-position:center;
+  height: 900px;
+  background-size: cover;
+  text-align: center;
+  color: white;
+  font-family: 'Syncopate';
+  font-weight: bold;
+}
+
+
+
+.header {
+  background-image: url('/images/ATXEVE.GRADIENT.jpg');
+  background-repeat:no-repeat;
+  background-size:contain;
+  background-position:center;
+  background-size: cover;
+  color: black;
+  font-family: 'Syncopate';
+  font-weight: bold;
+  display: flex;
+  padding-bottom: 30px;
+}
+
+.headerLogo {
+  padding-left: 30px;
+}
+
+.headerBar {
+  background-color: black;
+  height: 20px;
+  margin-bottom: 10px;
+}
+
+.formBar {
+  height: 50px;
+  display: inline-flex;
+}
+
+.editTripForm {
+  padding: 4px;
+}
+
+#tripLogo {
+  height: 100px;
+  padding: 10px 0 0 10px;
+}
+
+#gathervantTrip {
+  text-align: left;
+  font-family: 'Syncopate';
+  font-weight: bold;
+  font-size: 12px;
+  margin: 0;
+  padding: 3px 0 0 6px;
+}
+
+#groupTripText {
+  text-align: left;
+  font-family: 'Syncopate';
+  font-weight: bold;
+  font-size: 8px;
+  margin: 0;
+  padding-top: 2px;
+}
+#hero-btn {
+  font-weight: bold;
+  background-color: black;
+  border-color: black;
+}
+
+#hero-btn:hover {
+  background-color: black;
+}
+
+#headerTripName {
+  font-size: 50px;
+  margin-left: 200px;
 }

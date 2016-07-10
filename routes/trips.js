@@ -11,13 +11,14 @@ var Trip = require('../models/trip.js')
 
 router.post('/', function(req, res, next) {
 
-  var tripName = req.body.name;
-  var start_date = req.body.startDate;
-  var end_date = req.body.endDate;
-  var destination = req.body.location;
-  var adults = req.body.adults;
-  var children = req.body.children;
-  var room = req.body.room;
+  var tripName = req.body.name,
+      start_date = req.body.startDate,
+      end_date = req.body.endDate,
+      destination = req.body.location,
+      adults = req.body.adults,
+      children = req.body.children,
+      tripProfile = 'none'
+      room = req.body.room;
 
   var newTrip = Trip({
     startDate: start_date,
@@ -62,6 +63,7 @@ router.get('/:_id', function(req, res, next) {
     Trip.findById(id, function (err, trip) {
       if (err) return console.log(err);
       // req.body.<name> is from data from ajax call from update.js on client side
+      // if statments are because start and end date are required if included
       if(req.body.startDate){
         trip.startDate = req.body.startDate;
       };

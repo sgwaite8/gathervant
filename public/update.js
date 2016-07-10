@@ -12,7 +12,13 @@ $(function() {
         url: update,
         type: 'PUT',
         data: {
-          'tripName': 'hello';
+          'tripName': $('#inputTrip').val(),
+          'startDate' : $('#inputStartDate').val(),
+          'endDate' : $('#inputEndDate').val(),
+          'rooms' : $('#rooms').val(),
+          'adults' : $('#adults').val(),
+          'children' : $('#children').val(),
+          'concepts' : $('#inputConcepts').val()
         }
       })
       .done(function(update) {

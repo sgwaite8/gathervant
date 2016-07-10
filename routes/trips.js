@@ -60,19 +60,22 @@ router.get('/:_id', function(req, res, next) {
     var id = req.params.id;
 
     Trip.findById(id, function (err, trip) {
-      if (err) return handleError(err);
-      // trip.startDate = req.body.//<form name>;
-      // trip.endDate =
-      // trip.rooms =
-      // trip.adults =
-      // trip.children =
-      // trip.concepts =
-      // trip.amenities =
+      if (err) return console.log(err);
+      // req.body.<name> is from data from ajax call from update.js on client side
+      if(req.body.startDate){
+        trip.startDate = req.body.startDate;
+      };
+      if(req.body.endDate){
+        trip.endDate = req.body.endDate;
+      }
+      trip.rooms = req.body.rooms;
+      trip.adults = req.body.adults;
+      trip.children = req.body.children;
+      trip.concepts = req.body.concepts;
 
-      trip.tripName = req.body.tripName;
       trip.save(function (err, data) {
-        if (err) return handleError(err);
-        console.log(data.tripName);
+        if (err) return console.log(err);
+
         res.json(data);
       })
     });

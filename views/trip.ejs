@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
     <link href='https://fonts.googleapis.com/css?family=Syncopate:400,700' rel='stylesheet' type='text/css'>
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="/stylesheets/tripForm.css">
   </head>
   <body>
 
@@ -17,70 +18,80 @@
         <h3 id="groupTripText">GROUP TRIP PLANNER</h3>
     </div>
     <div class="rightHeader">
-      <h1 id="headerTripName">Trip Name
-      <h3 id="headerLocation">Location</h1>
+      <h1 id="headerTripName"><%= data[0].tripName%></h1>
+      <h3 id="headerLocation"><%= data[0].destination%></h3>
     </div>
   </div>
   <div class="headerBar"></div>
 
   </div>
-    <div class="container">
+    <div class="container full-form">
       <form class="form-horizontal" name="trip_form" action="./trips" method="POST">
       <fieldset>
-        <div class="optionBar">
-            <div class="col-lg-10 editTripForm">
+        <div class="container">
+          <div class="row">
+          <!-- <div class="col-sm-6"> -->
+            <div class="optionBar">
+                <div class="col-lg-12 editTripForm">
 
-              <label for="inputStartDate" class="col-lg-2 control-label">Start Date</label>
-              <input type="date" name="name" class="form-control" id="inputStartDate" placeholder="Start Date">
-            </div>
-            <div class="col-lg-10 editTripForm">
-              <label for="inputEndDate" class="col-lg-2 control-label">End Date</label>
-              <input type="date" name="name" class="form-control" id="inputEndDate" placeholder="End Date">
-
-            </div>
-            <div class="form-group">
-              <label for="rooms" class="col-lg-2 control-label">Rooms</label>
-              <div class="col-lg-10" id="firstBox">
-                <select class="form-control" id="rooms">
-                  <option selected disabled><%= data[0].rooms %></option>
-                  <option>1</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
-                  <option>5</option>
-                </select>
+                  <label for="inputStartDate" class="col-lg-2 control-label">Start Date</label>
+                  <input type="date" name="name" class="form-control col-lg-10" id="inputStartDate" placeholder="Start Date">
+                </div>
+                <div class="col-lg-12 editTripForm">
+                  <label for="inputEndDate" class="col-lg-2 control-label">End Date</label>
+                  <input type="date" name="name" class="form-control col-lg-10" id="inputEndDate" placeholder="End Date">
+                </div>
+              </div>
+            <!-- </div> -->
+          </div>
+            <div class="container dropdowns">
+              <!-- <div class="col-sm-6"> -->
+                <div class="form-group">
+                  <label for="rooms" class="col-lg-2 control-label">Rooms</label>
+                  <div class="col-lg-10" id="firstBox">
+                    <select class="form-control" id="rooms">
+                      <option selected disabled><%= data[0].rooms %></option>
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                      <option>5</option>
+                    </select>
+                  </div>
+                <!-- </div> -->
+              </div>
+              <div class="form-group">
+                <label for="adults" class="col-lg-2 control-label">Adults</label>
+                <div class="col-lg-10" id="secondBox">
+                  <select class="form-control" id="adults">
+                  <option selected disabled><%= data[0].adults %></option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="children" class="col-lg-2 control-label">Children</label>
+                <div class="col-lg-10" id="thirdBox">
+                  <select class="form-control" id="children">
+                  <option selected disabled><%= data[0].children %></option>
+                    <option>0</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                  </select>
+                </div>
               </div>
             </div>
-            <div class="form-group">
-              <label for="adults" class="col-lg-2 control-label">Adults</label>
-              <div class="col-lg-10" id="secondBox">
-                <select class="form-control" id="adults">
-                <option selected disabled><%= data[0].adults %></option>
-                  <option>1</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
-                  <option>5</option>
-                </select>
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="children" class="col-lg-2 control-label">Children</label>
-              <div class="col-lg-10" id="thirdBox">
-                <select class="form-control" id="children">
-                <option selected disabled><%= data[0].children %></option>
-                  <option>0</option>
-                  <option>1</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
-                  <option>5</option>
-                </select>
-              </div>
-            </div>
+          </div>
 
-        </div>
       </fieldset>
+      </div>
       <button type="submit" class="btn btn-primary" id="tripEditSubmit">Submit</button>
       </form>
 
@@ -88,7 +99,6 @@
         <div class="goalAdder">
           <input type="text" class="goalsInput"name="goalsInput" value="">
           <i class="fa fa-plus-square fa-lg" style="margin-left: 20px;"></i>
-          <i class="fa fa-check-square fa-lg" style="margin-left: 20px;"></i>
 
         </div>
       </div>

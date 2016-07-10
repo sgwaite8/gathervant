@@ -69,6 +69,8 @@ h3 {
 
 .rightHeader {
   text-align: right;
+  margin-left: auto;
+  margin-right: 0;
 }
 .headerLogo {
   padding-left: 30px;
@@ -108,7 +110,23 @@ h3 {
 
 .goalsInput {
   width: 80%;
-  margin-left: 30px;
+  margin-left: 45px;
+}
+
+.labelBox {
+  margin-left: 35px;
+}
+.goals {
+  padding: 5px 10px;
+  border-radius: 10%;
+  margin: 4px 5px 4px 10px;
+  display: inline-flex;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.tripFormControl input {
+  width: 20%:
 }
 
 #tripLogo {
@@ -162,7 +180,12 @@ h3 {
   background-color: black;
 }
 
+#mainSubmit {
+  font-weight: bold;
+  background-color: black;
+  border-color: black;
+}
+
 #headerTripName {
   font-size: 50px;
-  margin-left: 200px;
 }

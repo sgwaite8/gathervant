@@ -4,6 +4,7 @@
     <title>trip</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link rel="stylesheet" href="http://bootswatch.com/cosmo/bootstrap.min.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
     <link href='https://fonts.googleapis.com/css?family=Syncopate:400,700' rel='stylesheet' type='text/css'>
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
@@ -15,7 +16,10 @@
       <h3 id="gathervantTrip">GATHERVANT</h3>
         <h3 id="groupTripText">GROUP TRIP PLANNER</h3>
     </div>
-    <h1 id="headerTripName">Trip Name</h1>
+    <div class="rightHeader">
+      <h1 id="headerTripName">Trip Name
+      <h3 id="headerLocation">Location</h1>
+    </div>
   </div>
   <div class="headerBar"></div>
 
@@ -24,15 +28,19 @@
       <form class="form-horizontal" name="trip_form" action="./trips" method="POST">
       <fieldset>
         <div class="optionBar">
-          <div class="formBar">
             <div class="col-lg-10 editTripForm">
-              <input type="date" class="form-control" id="inputStartDate" placeholder="Start Date">
+
+              <label for="inputStartDate" class="col-lg-2 control-label">Start Date</label>
+              <input type="date" name="name" class="form-control" id="inputStartDate" placeholder="Start Date">
             </div>
             <div class="col-lg-10 editTripForm">
-              <input type="date"  class="form-control" id="inputEndDate" placeholder="End Date">
+              <label for="inputEndDate" class="col-lg-2 control-label">End Date</label>
+              <input type="date" name="name" class="form-control" id="inputEndDate" placeholder="End Date">
+
             </div>
             <div class="form-group">
-              <div class="col-lg-10">
+              <label for="rooms" class="col-lg-2 control-label">Rooms</label>
+              <div class="col-lg-10" id="firstBox">
                 <select class="form-control" id="rooms">
                   <option selected disabled><%= data[0].rooms %></option>
                   <option>1</option>
@@ -44,7 +52,8 @@
               </div>
             </div>
             <div class="form-group">
-              <div class="col-lg-10">
+              <label for="adults" class="col-lg-2 control-label">Adults</label>
+              <div class="col-lg-10" id="secondBox">
                 <select class="form-control" id="adults">
                 <option selected disabled><%= data[0].adults %></option>
                   <option>1</option>
@@ -56,7 +65,8 @@
               </div>
             </div>
             <div class="form-group">
-              <div class="col-lg-10">
+              <label for="children" class="col-lg-2 control-label">Children</label>
+              <div class="col-lg-10" id="thirdBox">
                 <select class="form-control" id="children">
                 <option selected disabled><%= data[0].children %></option>
                   <option>0</option>
@@ -68,10 +78,18 @@
                 </select>
               </div>
             </div>
-          </div>
+
         </div>
-        <div class="conceptBar">
-            <button type="submit" class="btn btn-primary">Submit</button>
+      </fieldset>
+      <button type="submit" class="btn btn-primary" id="tripEditSubmit">Submit</button>
+      </form>
+
+      <div class="goalsBox">
+        <div class="goalAdder">
+          <input type="text" class="goalsInput"name="goalsInput" value="">
+          <i class="fa fa-plus-square fa-lg" style="margin-left: 20px;"></i>
+          <i class="fa fa-check-square fa-lg" style="margin-left: 20px;"></i>
+
         </div>
       </fieldset>
     </form>
@@ -90,6 +108,7 @@
               <li>Price: <%= accommodations[i].attraction.minRate %></li>
             </ul>
 
+
           </div>
 
       <% } %>
@@ -99,5 +118,6 @@
 
 <script type="text/javascript" src="//code.jquery.com/jquery-2.2.0.min.js"></script>
 <script type="text/javascript" src="/javascripts/update.js"></script>
+
 
 </html>

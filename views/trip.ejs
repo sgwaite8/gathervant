@@ -14,7 +14,10 @@
       <h3 id="gathervantTrip">GATHERVANT</h3>
         <h3 id="groupTripText">GROUP TRIP PLANNER</h3>
     </div>
-    <h1 id="headerTripName">Trip Name</h1>
+    <div class="rightHeader">
+      <h1 id="headerTripName">Trip Name
+      <h3 id="headerLocation">Location</h1>
+    </div>
   </div>
   <div class="headerBar"></div>
 
@@ -23,15 +26,17 @@
       <form class="form-horizontal" name="trip_form" action="./trips" method="POST">
       <fieldset>
         <div class="optionBar">
-          <div class="formBar">
             <div class="col-lg-10 editTripForm">
+              <label for="inputStartDate" class="col-lg-2 control-label">Start Date</label>
               <input type="date" name="name" class="form-control" id="inputStartDate" placeholder="Start Date">
             </div>
             <div class="col-lg-10 editTripForm">
+              <label for="inputEndDate" class="col-lg-2 control-label">End Date</label>
               <input type="date" name="name" class="form-control" id="inputEndDate" placeholder="End Date">
             </div>
             <div class="form-group">
-              <div class="col-lg-10">
+              <label for="rooms" class="col-lg-2 control-label">Rooms</label>
+              <div class="col-lg-10" id="firstBox">
                 <select class="form-control" id="rooms">
                   <option>1</option>
                   <option>2</option>
@@ -42,7 +47,8 @@
               </div>
             </div>
             <div class="form-group">
-              <div class="col-lg-10">
+              <label for="adults" class="col-lg-2 control-label">Adults</label>
+              <div class="col-lg-10" id="secondBox">
                 <select class="form-control" id="adults">
                   <option>1</option>
                   <option>2</option>
@@ -53,7 +59,8 @@
               </div>
             </div>
             <div class="form-group">
-              <div class="col-lg-10">
+              <label for="children" class="col-lg-2 control-label">Children</label>
+              <div class="col-lg-10" id="thirdBox">
                 <select class="form-control" id="children">
                   <option>0</option>
                   <option>1</option>
@@ -64,41 +71,10 @@
                 </select>
               </div>
             </div>
-          </div>
+        </div>
         <div class="conceptBar">
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </div>
-        <div class="form-group">
-          <label for="inputConcepts" class="col-lg-2 control-label">Concepts</label>
-          <div class="col-lg-10">
-            <input type="text" name="name" class="form-control" id="inputConcepts" placeholder="List Your Plans">
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="inputStartDate" class="col-lg-2 control-label">Start Date</label>
-          <div class="col-lg-10">
-            <input type="date" name="startDate" class="form-control" id="inputStartDate">
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="inputEndDate" class="col-lg-2 control-label">End Date</label>
-          <div class="col-lg-10">
-            <input type="date" name="endDate" class="form-control" id="inputEndDate">
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="inputLocation" class="col-lg-2 control-label">Location</label>
-          <div class="col-lg-10">
-            <input type="text" name="location" class="form-control" id="inputLocation">
-          </div>
-        </div>
-
-
-
-        <div class="form-group">
-
-        </div>
       </fieldset>
+      <button type="submit" class="btn btn-primary">Submit</button>
       </form>
     </div>
   </body>

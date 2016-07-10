@@ -28,7 +28,7 @@
   </div>
     <div class="container full-form">
       <form class="form-horizontal" name="trip_form" action="./trips" method="POST">
-      <fieldset>
+      <fieldset id="tripFieldSet">
 
         <div class="container">
           <div class="row">
@@ -94,13 +94,11 @@
 
       </fieldset>
       </div>
-      <button type="submit" class="btn btn-primary" id="tripEditSubmit">Submit</button>
       </form>
 
       <div class="goalsBox">
         <div class="labelBox">
--
--        </div>
+       </div>
         <div class="goalAdder">
           <input type="text" class="goalsInput" name="goalsInput" id="inputText" value="">
           <i id="add-btn"class="fa fa-plus-square fa-lg" style="margin-left: 20px;"></i>
@@ -108,6 +106,8 @@
         </div>
       </div>
       </fieldset>
+      <button type="submit" class="btn btn-primary" id="tripEditSubmit">Submit</button>
+
     </form>
 
 

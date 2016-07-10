@@ -71,6 +71,7 @@ router.get('/:_id', function(req, res, next) {
 
     Trip.findById(id, function (err, trip) {
       if (err) return console.log(err);
+      console.log("-----------" +req.body.concepts);
       // req.body.<name> is from data from ajax call from update.js on client side
       // if statments are because start and end date are required if included
       if(req.body.startDate){

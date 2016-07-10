@@ -13,7 +13,7 @@ router.post('/', function(req, res, next) {
 
 
   var tripName = req.body.name,
-      start_date = formateDate(req.body.startDate),
+      start_date = formatDate(req.body.startDate),
       end_date = formatDate(req.body.endDate),
       destination = req.body.location,
       adults = req.body.adults,
@@ -21,7 +21,7 @@ router.post('/', function(req, res, next) {
       tripProfile = 'none'
       room = req.body.room;
 
-
+      console.log(req.body.adults, req.body.children, req.body.room)
   var newTrip = Trip({
     startDate: start_date,
     endDate: end_date,
@@ -39,6 +39,7 @@ router.post('/', function(req, res, next) {
 
   newTrip.save(function(err, response) {
     if (err) console.log(err);
+    console.log(response)
     res.redirect('./trips/'+ response._id);
   })
 });
@@ -50,11 +51,17 @@ router.get('/:_id', function(req, res, next) {
     _id: trip_id
   }, function(err, data) {
     if (err) console.log(err);
-    // res.send('test');
+
     request.get('http://localhost:3000/api/trips/' + trip_id, function(err, response, body){
+      var blazerBody = JSON.parse(response.body).body,
+          blazerObj = JSON.parse(blazerBody)
+
+      // console.log('body:'+ Object.keys(blazerObj.accommodations[0].image.urls.original))
+      console.log('DB:'+ data)
       res.render('trip', {
           data: data,
-          response: response
+          response: response,
+          accommodations: blazerObj.accommodations,
         });
     })
   })

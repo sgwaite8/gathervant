@@ -26,14 +26,15 @@
         <div class="optionBar">
           <div class="formBar">
             <div class="col-lg-10 editTripForm">
-              <input type="date" name="name" class="form-control" id="inputStartDate" placeholder="Start Date">
+              <input type="date" class="form-control" id="inputStartDate" placeholder="Start Date">
             </div>
             <div class="col-lg-10 editTripForm">
-              <input type="date" name="name" class="form-control" id="inputEndDate" placeholder="End Date">
+              <input type="date"  class="form-control" id="inputEndDate" placeholder="End Date">
             </div>
             <div class="form-group">
               <div class="col-lg-10">
                 <select class="form-control" id="rooms">
+                  <option selected disabled><%= data[0].rooms %></option>
                   <option>1</option>
                   <option>2</option>
                   <option>3</option>
@@ -45,6 +46,7 @@
             <div class="form-group">
               <div class="col-lg-10">
                 <select class="form-control" id="adults">
+                <option selected disabled><%= data[0].adults %></option>
                   <option>1</option>
                   <option>2</option>
                   <option>3</option>
@@ -56,6 +58,7 @@
             <div class="form-group">
               <div class="col-lg-10">
                 <select class="form-control" id="children">
+                <option selected disabled><%= data[0].children %></option>
                   <option>0</option>
                   <option>1</option>
                   <option>2</option>
@@ -66,13 +69,35 @@
               </div>
             </div>
           </div>
+        </div>
         <div class="conceptBar">
             <button type="submit" class="btn btn-primary">Submit</button>
         </div>
+      </fieldset>
+    </form>
 
+
+ <div>
+      <% for (var i=0; i < 5; i++) { %>
+          <div>
+            <%= accommodations[i].attraction.name %>
+          <div>
+            <img src="<%= accommodations[i].image.urls[100] %>" alt="">
+          </div>
+            <ul>
+              <li>Stars: <%= accommodations[i].attraction.starRating %></li>
+              <li>Address: <%= accommodations[i].attraction.location.formattedAddress %></li>
+              <li>Price: <%= accommodations[i].attraction.minRate %></li>
+            </ul>
+
+          </div>
+
+      <% } %>
+
+  </div>
   </body>
 
 <script type="text/javascript" src="//code.jquery.com/jquery-2.2.0.min.js"></script>
-<script type="text/javascript" src="/update.js"></script>
+<script type="text/javascript" src="/javascripts/update.js"></script>
 
 </html>

@@ -32,4 +32,13 @@ $(function() {
         console.log('Request failed: ' + textStatus);
       });
   })
+  $("#add-btn").click(function(e) {
+    var inputText = $("#inputText").val();
+    if(inputText) {
+      $(".labelBox").append("<span class='label label-danger goals'>" + inputText + "</span>");
+      $("#inputText").val('');
+      console.log($(".goals"));
+    }
+
+  })
 })

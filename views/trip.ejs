@@ -4,6 +4,7 @@
     <title>trip</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link rel="stylesheet" href="http://bootswatch.com/cosmo/bootstrap.min.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
     <link href='https://fonts.googleapis.com/css?family=Syncopate:400,700' rel='stylesheet' type='text/css'>
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
@@ -72,10 +73,18 @@
               </div>
             </div>
         </div>
-        <div class="conceptBar">
       </fieldset>
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <button type="submit" class="btn btn-primary" id="tripEditSubmit">Submit</button>
       </form>
+
+      <div class="goalsBox">
+        <div class="goalAdder">
+          <input type="text" class="goalsInput"name="goalsInput" value="">
+          <i class="fa fa-plus-square fa-lg" style="margin-left: 20px;"></i>
+          <i class="fa fa-check-square fa-lg" style="margin-left: 20px;"></i>
+        </div>
+
+      </div>
     </div>
   </body>
 </html>

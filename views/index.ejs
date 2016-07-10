@@ -9,6 +9,7 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
+
     <div class="hero">
       <img src="/images/gv.logomark.png" alt="gathervant logo">
       <h1>Gathervant</h1>
@@ -27,12 +28,9 @@
           <input type="text" name="name" class="form-control" id="inputTrip" placeholder="Name Your Trip">
         </div>
       </div>
-      <div class="form-group">
-        <label for="inputConcepts" class="col-lg-2 control-label">Concepts</label>
-        <div class="col-lg-10">
-          <input type="text" name="name" class="form-control" id="inputConcepts" placeholder="List Your Plans">
-        </div>
-      </div>
+
+       <!-- form for concepts used to live here but concepts will be inserted on the next page on the next page  -->
+
       <div class="form-group">
         <label for="inputStartDate" class="col-lg-2 control-label">Start Date</label>
         <div class="col-lg-10">
@@ -54,7 +52,8 @@
       <div class="form-group">
         <label for="rooms" class="col-lg-2 control-label">Rooms</label>
         <div class="col-lg-10">
-          <select class="form-control" id="rooms">
+
+          <select class="form-control" name="room" id="rooms">
             <option>1</option>
             <option>2</option>
             <option>3</option>
@@ -66,7 +65,8 @@
       <div class="form-group">
         <label for="adults" class="col-lg-2 control-label">Adults</label>
         <div class="col-lg-10">
-          <select class="form-control" id="adults">
+
+          <select class="form-control" name="adults" id="adults">
             <option>1</option>
             <option>2</option>
             <option>3</option>
@@ -78,7 +78,9 @@
       <div class="form-group">
         <label for="children" class="col-lg-2 control-label">Children</label>
         <div class="col-lg-10">
-          <select class="form-control" id="children">
+
+          <select class="form-control" name="children" id="children">
+
             <option>0</option>
             <option>1</option>
             <option>2</option>
@@ -94,6 +96,7 @@
         </div>
       </div>
     </fieldset>
+
     </form>
     </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>

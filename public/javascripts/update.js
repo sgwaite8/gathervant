@@ -37,8 +37,28 @@ $(function() {
     if(inputText) {
       $(".labelBox").append("<span class='label label-danger goals'>" + inputText + "</span>");
       $("#inputText").val('');
-      console.log($(".goals"));
+      var arrayVal = disp($(".goals").toArray());
+      console.log(arrayVal);
     }
 
   })
+  $("#inputText").keypress(function(e) {
+    if(e.which === 13) {
+      var inputText = $("#inputText").val();
+      if(inputText) {
+        $(".labelBox").append("<span class='label label-danger goals'>" + inputText + "</span>");
+        $("#inputText").val('');
+        var arrayVal = disp($(".goals").toArray());
+        console.log(arrayVal);
+      }
+    }
+  })
 })
+
+function disp(goals) {
+  var a = [];
+  for (var i = 0; i < goals.length; i++) {
+    a.push(goals[i].innerHTML);
+  }
+  return a;
+}

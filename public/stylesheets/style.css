@@ -108,7 +108,19 @@ h3 {
 
 .goalsInput {
   width: 80%;
-  margin-left: 30px;
+  margin-left: 45px;
+}
+
+.labelBox {
+  margin-left: 35px;
+}
+.goals {
+  padding: 5px 10px;
+  border-radius: 10%;
+  margin: 4px 5px 4px 10px;
+  display: inline-flex;
+  text-transform: uppercase;
+  font-weight: bold;
 }
 
 #tripLogo {
@@ -161,6 +173,8 @@ h3 {
 #hero-btn:hover {
   background-color: black;
 }
+
+
 
 #headerTripName {
   font-size: 50px;

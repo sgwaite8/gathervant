@@ -63,10 +63,11 @@ h3 {
   font-family: 'Syncopate';
   font-weight: bold;
   display: flex;
+  padding-bottom: 30px;
 }
 
 .headerLogo {
-  width: 20%;
+  padding-left: 30px;
 }
 
 .headerBar {
@@ -74,6 +75,16 @@ h3 {
   height: 20px;
   margin-bottom: 10px;
 }
+
+.formBar {
+  height: 50px;
+  display: inline-flex;
+}
+
+.editTripForm {
+  padding: 4px;
+}
+
 #tripLogo {
   height: 100px;
   padding: 10px 0 0 10px;
@@ -108,5 +119,5 @@ h3 {
 
 #headerTripName {
   font-size: 50px;
-  text-align: right;
+  margin-left: 200px;
 }

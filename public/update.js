@@ -1,6 +1,6 @@
 var urlPathName = window.location.pathname.split('/');
 urlPathName = urlPathName[urlPathName.length-1]
-var update = '/trips/'+ urlPathName
+var update = urlPathName
 
 
 
@@ -11,11 +11,12 @@ $(function() {
     $.ajax({
         url: update,
         type: 'PUT',
-        data: {'done': true}
+        data: {
+          'tripName': 'hello';
+        }
       })
       .done(function(update) {
-        console.log(update);
-        console.log('test')
+
       })
       .fail(function(jqXHR, textStatus) {
         console.log('Request failed: ' + textStatus);

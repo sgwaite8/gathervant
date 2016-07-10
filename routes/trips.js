@@ -69,12 +69,11 @@ router.get('/:_id', function(req, res, next) {
       // trip.concepts =
       // trip.amenities =
 
-      trip.tripName = req.body.name
-      console.log(req.body.name)
+      trip.tripName = req.body.tripName;
       trip.save(function (err, data) {
         if (err) return handleError(err);
         console.log(data.tripName);
-        res.redirect('/'+ id);
+        res.json(data);
       })
     });
   });

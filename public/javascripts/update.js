@@ -23,7 +23,7 @@ $(function() {
           'rooms' : $('#rooms').val(),
           'adults' : $('#adults').val(),
           'children' : $('#children').val(),
-          'concepts' : 'test',
+          'concepts' : conceptsArr,
           'tripProfile' : 'none'
         }
       })
@@ -50,7 +50,7 @@ $(function() {
       if(inputText) {
         $(".labelBox").append("<span class='label label-danger goals'>" + inputText + "</span>");
         $("#inputText").val('');
-      
+
       }
     }
   })

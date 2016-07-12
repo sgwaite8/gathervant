@@ -12,6 +12,8 @@ $(function() {
     evt.preventDefault();
     console.log(urlPathName)
     console.log($('#rooms').val())
+    var conceptsArr = disp($(".goals").toArray());
+    console.log("conceptsArr ", conceptsArr);
     $.ajax({
         url: urlPathName,
         type: 'PUT',
@@ -21,7 +23,7 @@ $(function() {
           'rooms' : $('#rooms').val(),
           'adults' : $('#adults').val(),
           'children' : $('#children').val(),
-          'concepts' : $('#inputConcepts').val(),
+          'concepts' : conceptsArr,
           'tripProfile' : 'none'
         }
       })
@@ -38,8 +40,7 @@ $(function() {
     if(inputText) {
       $(".labelBox").append("<span class='label label-danger goals'>" + inputText + "</span>");
       $("#inputText").val('');
-      var arrayVal = disp($(".goals").toArray());
-      console.log(arrayVal);
+
     }
 
   })
@@ -49,8 +50,7 @@ $(function() {
       if(inputText) {
         $(".labelBox").append("<span class='label label-danger goals'>" + inputText + "</span>");
         $("#inputText").val('');
-        var arrayVal = disp($(".goals").toArray());
-        console.log(arrayVal);
+
       }
     }
   })
@@ -61,5 +61,5 @@ function disp(goals) {
   for (var i = 0; i < goals.length; i++) {
     a.push(goals[i].innerHTML);
   }
-  return a;
+  return a.join(',');
 }

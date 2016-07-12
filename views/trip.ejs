@@ -37,11 +37,11 @@
                 <div class="col-lg-12 editTripForm">
 
                   <label for="inputStartDate" class="col-lg-2 control-label">Start Date</label>
-                  <input type="date" name="name" class="form-control col-lg-10" id="inputStartDate" placeholder="Start Date">
+                  <input type="date" name="name" class="form-control col-lg-10" id="inputStartDate" value="<%= data[0].startDate.toISOString().split('T')[0]%>">
                 </div>
                 <div class="col-lg-12 editTripForm">
                   <label for="inputEndDate" class="col-lg-2 control-label">End Date</label>
-                  <input type="date" name="name" class="form-control col-lg-10" id="inputEndDate" placeholder="End Date">
+                  <input type="date" name="name" class="form-control col-lg-10" id="inputEndDate" value="<%= data[0].endDate.toISOString().split('T')[0]%>">
                 </div>
               </div>
             <!-- </div> -->

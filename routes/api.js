@@ -10,8 +10,23 @@ router.get('/trips/:_id', function(req, res, next) {
   // get the trip from _id
   Trip.findById(trip_id, function(err, trip) {
     // if concepts or amenities are null set them to an empty string
-    trip.concepts ? concepts = trip.concepts.join(',') : concepts = '';
-    trip.amenities ? amenities = trip.amenities.join(',') : amenities = '';
+
+    console.log('-------------------------------------');
+    console.log('concepts true: ',trip.concepts === []);
+    console.log(typeof trip.concepts );
+    console.log('-------------------------------------');
+
+    if (trip.concepts && trip.concepts.length > 0){
+      var concepts = "&concepts="  + trip.concepts.join(',')
+    }else{
+      var concepts = '';
+    };
+    if (trip.amenites && trip.amenites.length > 0){
+      var amenites = "&amenites="  + trip.amenites.join(',')
+    }else{
+      var amenites = '';
+    };
+
 
     var destination = trip.destination,
         rooms = trip.rooms,
@@ -26,7 +41,7 @@ router.get('/trips/:_id', function(req, res, next) {
 
     // create options for the Wayblazer api request
     var options = {
-      "url":"https://api.wayblazer.com/v1/accommodations/search?" + "destination=" + destination +"&rooms="+ rooms + "&adults=" + adults + "&children=" + children + "&startDate="+ startDate + "&endDate=" + endDate  + "&getPricing=" + getPricing +"&concepts=" + concepts + "&amenities=" + amenities +"&bustCache=" + bustCache,
+      "url":"https://api.wayblazer.com/v1/accommodations/search?" + "destination=" + destination +"&rooms="+ rooms + "&adults=" + adults + "&children=" + children + "&startDate="+ startDate + "&endDate=" + endDate  + "&getPricing=" + getPricing  + concepts + amenites +"&bustCache=" + bustCache,
       headers:{
         "x-api-key":API_KEY
       }
@@ -34,6 +49,7 @@ router.get('/trips/:_id', function(req, res, next) {
     }
     // send the reqest to the Wayblazer api and retunr the response as json
     request(options, function(error, response){
+      console.log('url :',options.url);
       res.json(response);
 
     })

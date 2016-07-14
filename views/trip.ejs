@@ -98,7 +98,10 @@
 
       <div class="goalsBox">
         <div class="labelBox">
-       </div>
+          <% for(var i = 0; i < data[0].concepts.length; i++ ){ %>
+          <span class='label label-danger goals'> <%= data[0].concepts[i] %> </span>
+          <% }; %>
+        </div>
         <div class="goalAdder">
           <input type="text" class="goalsInput" name="goalsInput" id="inputText" value="">
           <i id="add-btn"class="fa fa-plus-square fa-lg" style="margin-left: 20px;"></i>

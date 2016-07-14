@@ -83,8 +83,7 @@ router.get('/:_id', function(req, res, next) {
       trip.rooms = req.body.rooms;
       trip.adults = req.body.adults;
       trip.children = req.body.children;
-      trip.concepts = req.body.concepts;
-
+      trip.concepts = req.body.concepts.split(',');
       trip.save(function (err, data) {
         if (err) return console.log(err);
 

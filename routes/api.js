@@ -27,8 +27,6 @@ router.get('/trips/:_id', function(req, res, next) {
       var amenites = '';
     };
 
-    console.log(trip.amenites);
-    console.log("pool", amenites);
 
     var destination = trip.destination,
         rooms = trip.rooms,
